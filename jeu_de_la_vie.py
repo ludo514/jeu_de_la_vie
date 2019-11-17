@@ -25,11 +25,12 @@ class GameOfLife():
 
         return map
 
+
     def nouvelle_map(self):
         nouvelle_map = []
         for i in range(self.ligne+1):
             nouvelle_map.append([])
-            for j in range(self.colonne):
+            for j in range(self.colonne+1):
                 cellule = 0
                 nouvelle_map[i].append(cellule)
         return nouvelle_map
@@ -68,7 +69,7 @@ class GameOfLife():
             for j in range(self.colonne):
                 nouvelle_cellule = self.count(i,j)
                 nouvelle_map[i][j] = nouvelle_cellule
-                self.map[i][j] = nouvelle_map[i][j]
+        self.map = nouvelle_map
 
     def draw(self):
         self.x = 0
